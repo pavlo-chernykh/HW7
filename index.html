@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW7</title>
+</head>
+<body>
+  <script>
+    const collection = ['ivan', 'olga', 'petr', 'oleg', 'serj'];
+    function collectionFunction(colIndex, colElement) {
+    
+    const collectionResult = [];
+    const tmpArrayFirstPart = [];
+    const tmpArraySecondPart = [];
+  
+    let indexEl;
+
+    for (let i = 0; i < collection.length; i++) {
+      if (collection[i] === collection[colIndex]) {
+        indexEl = i;
+      }
+    }
+    for (let i = 0; i <= indexEl; i++) {
+      tmpArrayFirstPart[tmpArrayFirstPart.length] = collection[i]; 
+      
+    }
+    for (let i = indexEl + 1; i < collection.length; i++) {
+      tmpArraySecondPart[tmpArraySecondPart.length] = collection[i]; 
+    }
+    for (let i = 0; i < tmpArrayFirstPart.length; i++) {
+      collectionResult[i] = tmpArrayFirstPart[i];
+    }
+
+    collectionResult[collectionResult.length] = colElement;
+
+    for (let i = 0; i < tmpArraySecondPart.length; i++) {
+      collectionResult[collectionResult.length] = tmpArraySecondPart[i];
+    }
+    
+    return collectionResult;
+    }
+    const colArrResult = collectionFunction(3, 'valera')
+    console.log(colArrResult, 'collectionResult');
+
+    const arrLast = ['one', 'two', 'three', 'four', 'two', 'one', 'two', 'three', 'four', 'two']
+    function arrLastIndexOf(arrayName, arrayEle) {
+      let isArrayEleFind = -1;
+
+      const arr = arrayName;
+      for (let index = 0; index < arr.length; index++) {
+       
+        let arrEl = arr[index];
+        
+        if (arrEl === arrayEle) {
+          isArrayEleFind = index;
+        }
+      }
+      return isArrayEleFind;  
+    }
+
+    const resultLast = arrLastIndexOf(arrLast, 'two');
+    console.log(resultLast);
+
+    const arr = ['apple', 'banana', 'kiwi', 'pineapple', 'oreo', 'pineapple', 'banana', 'kiwi', 'pineapple', 'oreo']
+
+    function arrIndexOf(arrayName, arrayEle) {
+      let isArrayEleFind = -1;
+
+      const arr = arrayName;
+      for (let index = 0; index < arr.length; index++) {
+        
+        let arrEl = arr[index];
+        
+        if (arrEl === arrayEle) {
+          isArrayEleFind = index;
+          break;
+        }
+      }
+      return isArrayEleFind;  
+    }
+
+    const result = arrIndexOf(arr, 'pineapple');
+    console.log(result);
+    
+    const arrIncludes = ['green', 'yellow', 'blue', 'purple', '420']
+    function doesArrinclude (arrName, arrEle) {
+      let isEleFind = false;
+
+      const arr = arrName;
+      for (let index = 0; index < arr.length; index++) {
+       
+        let arrEl = arr[index];
+        
+        if (arrEl === arrEle) {
+          isEleFind = true;
+        }
+      }
+      return isEleFind;  
+    }
+
+    const resultIncludes = doesArrinclude(arrIncludes, 'blue');
+    console.log(resultIncludes);
+  </script>
+</body>
+</html>
